@@ -2,3 +2,18 @@ auth:
   htpasswd:
     realm: basic-realm
     path: /auth/htpasswd
+storage:
+  cache:
+    blobdescriptor: inmemory
+  filesystem:
+    rootdirectory: /var/lib/registry
+http:
+  addr: :5000
+  headers:
+    X-Content-Type-Options: [nosniff]
+  host: https://hub.docker.mican.io:5000
+health:
+  storagedriver:
+    enabled: true
+    interval: 10s
+    threshold: 3

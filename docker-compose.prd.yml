@@ -1,0 +1,12 @@
+version: '3'
+volumes:
+  registry:
+    driver_opts:
+      type: "nfs"
+      o: "addr=10.2.0.4,rw,nfsvers=4"
+      device: ":/docker/docker-registry/registry"
+  registry-auth:
+    driver_opts:
+      type: "nfs"
+      o: "addr=10.2.0.4,rw,nfsvers=4"
+      device: ":/docker/docker-registry/registry-auth"
